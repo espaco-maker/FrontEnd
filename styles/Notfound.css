@@ -7,11 +7,11 @@
 	--gray-500: #30444e;
 	--gray-200: #96a7af;
 	--color-red: rgb(255, 87, 95);
-	--Cube-color: rgb(109, 56, 255);
-	--Cube-color-02: rgba(109, 56, 255, 0.2);
-	--Cube-color-04: rgba(109, 56, 255, 0.4);
-	--Cube-color-06: rgba(109, 56, 255, 0.6);
-	--Cube-color-08: rgba(109, 56, 255, 0.8);
+	--Cube-color: rgb(68, 0, 255);
+	--Cube-color-02: rgba(68, 0, 255, 0.2);
+	--Cube-color-04: rgba(68, 0, 255, 0.4);
+	--Cube-color-06: rgba(68, 0, 255, 0.6);
+	--Cube-color-08: rgba(68, 0, 255, 0.8);
 	--Cube-size: 200px;
 	--Cube-middle: calc(calc(var(--Cube-size) / 2) - 1px);
 }
