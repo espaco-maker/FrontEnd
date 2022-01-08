@@ -14,7 +14,9 @@
 		<link rel="stylesheet" href="../styles/global.css" />
 		<link rel="stylesheet" href="../styles/espacomaker.css" />
 		<link rel="stylesheet" href="../styles/Signin.css" />
+		<link rel="stylesheet" href="../styles/form.css" />
 		<script src="../scripts/signin/index.js" defer></script>
+		<script src="../scripts/form.js" defer></script>
 		<title>Login</title>
 	</head>
 	<body>
@@ -35,7 +37,7 @@
 			</section>
 			<section class="w-50 formContainer">
 				<h1>Fazer login</h1>
-				<p id="error-message"></p>
+				<p class="error-message"></p>
 				<form id="SigninForm">
 					<div class="formInput">
 						<input type="email" name="email" id="email" required />
@@ -48,7 +50,7 @@
 							src="../images/icons/hide.svg"
 							alt="toggle"
 							onclick="togglePassword()"
-							id="eye-icon"
+							class="eye-icon"
 						/>
 					</div>
 					<div class="Options">

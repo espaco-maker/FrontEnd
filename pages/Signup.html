@@ -12,8 +12,95 @@
 		/>
 		<link rel="shortcut icon" href="../images/Logo.svg" type="image/svg" />
 		<link rel="stylesheet" href="../styles/global.css" />
-		<link rel="stylesheet" href="../styles/Signin.css" />
+		<link rel="stylesheet" href="../styles/espacomaker.css" />
+		<link rel="stylesheet" href="../styles/form.css" />
+		<link rel="stylesheet" href="../styles/Signup.css" />
+		<script src="../scripts/form.js" defer></script>
+		<script src="../scripts/signup/index.js" defer></script>
 		<title>Cadastro</title>
 	</head>
-	<body></body>
+	<body>
+		<main class="container">
+			<section class="w-50 formContainer">
+				<h1>Cadastro</h1>
+				<p class="error-message">
+					Preencha todos os campos abaixo para começar
+				</p>
+				<form id="SignupForm">
+					<div class="formInput">
+						<input type="text" name="Nome" id="firstName" required />
+						<label for="firstName">Nome</label>
+					</div>
+
+					<div class="formInput">
+						<input type="text" name="Sobrenome" id="lastName" required />
+						<label for="lastName">Sobrenome</label>
+					</div>
+
+					<div class="formInput">
+						<input type="email" name="email" id="email" required />
+						<label for="email">E-mail</label>
+					</div>
+
+					<div class="formInput last">
+						<input
+							type="password"
+							name="password"
+							id="password"
+							required
+							class="password"
+							onkeyup="changePassword()"
+							value=""
+						/>
+						<label for="password">Senha</label>
+						<img
+							src="../images/icons/hide.svg"
+							alt="toggle"
+							onclick="togglePassword()"
+							class="eye-icon"
+						/>
+						<div class="modalPassword">
+							<p>
+								<img src="../images/icons/close.svg" alt="X" />
+								<span>Letra maiúscula</span>
+							</p>
+							<p>
+								<img src="../images/icons/close.svg" alt="X" />
+								<span>Letra minúscula</span>
+							</p>
+							<p>
+								<img src="../images/icons/close.svg" alt="X" />
+								<span>Número</span>
+							</p>
+							<p>
+								<img src="../images/icons/close.svg" alt="X" />
+								<span>Caractere especial</span>
+							</p>
+							<p>
+								<img src="../images/icons/close.svg" alt="X" />
+								<span>Mais de 8 caracteres</span>
+							</p>
+						</div>
+					</div>
+					<div class="btn-Container">
+						<button type="submit">Entrar</button>
+					</div>
+				</form>
+			</section>
+			<section class="EspacoMakerContainer">
+				<div class="background">
+					<img src="../images/Background.svg" alt="Background" />
+				</div>
+				<div class="logoContainer">
+					<div class="logo">
+						<img src="../images/Logo.svg" alt="Logo" />
+						<h2 class="logoTitle">Espaço Maker</h2>
+					</div>
+					<div class="logoSubtitle">
+						<p>Aprenda a cultura maker.</p>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
 </html>

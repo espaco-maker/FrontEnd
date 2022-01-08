@@ -8,11 +8,15 @@
 	--gray-400: #3e5764;
 	--gray-300: #54707e;
 	--gray-200: #96a7af;
-	--color-red: #ff575f;
+	--color-red: #e83f5b;
 }
 
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+}
+
+.w-50 {
+	width: 50%;
 }
