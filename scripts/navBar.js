@@ -35,3 +35,73 @@ document
   .forEach((link) => {
     link.addEventListener("click", scrollToIdOnClick);
   });
+
+addEventListener("load", () => {
+  const div = document.querySelector("#Login");
+  const { FirstName } = getUser();
+  if (FirstName) {
+    div.innerHTML = `
+    <p class="UserName">Olá ${FirstName}</p>
+    `;
+  }
+  veifyToken();
+})
+
+function getUser() {
+  const user = localStorage.getItem("@EspacoMaker:user");
+  if (user) {
+    return JSON.parse(user);
+  }
+  return null;
+}
+
+async function veifyToken() {
+  const token = localStorage.getItem("@EspacoMaker:token");
+  if (token) {
+    const url = "http://localhost:8000/user/valdiateToken";
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ token }),
+    };
+    try {
+      const response = await fetch(url, options);
+      const json = await response.json();
+      if (!json.success) {
+        throw new Error(json.error);
+      }
+    } catch (error) {
+      localStorage.removeItem("@EspacoMaker:token");
+      localStorage.removeItem("@EspacoMaker:user");
+      addLinkToLogin();
+    }
+  }
+  return false;
+}
+
+function addLinkToLogin() {
+  const div = document.querySelector("#Login");
+  div.innerHTML = `
+  <a href="./pages/Signin.html">
+    <button class="button ButtonOutlined">Login</button>
+  </a>
+  `;
+}
+
+const goTop = document.querySelector("#goTop");
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  if (scrollTop > 100) {
+    goTop.classList.add("active");
+  } else {
+    goTop.classList.remove("active");
+  }
+});
+
+goTop.addEventListener("click", () => {
+  scrollToPosition(0);
+});

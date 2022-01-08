@@ -11,6 +11,7 @@
 			rel="stylesheet"
 		/>
 		<link rel="shortcut icon" href="./images/Logo.svg" type="image/svg" />
+		<link rel="stylesheet" href="./styles/global.css" />
 		<link rel="stylesheet" href="./styles/style.css" />
 		<title>Espaço Maker</title>
 	</head>
@@ -49,8 +50,8 @@
 							<li>Contato</li>
 						</a>
 					</div>
-					<div class="NavBarButton">
-						<a href="./pages/Notfound.html">
+					<div class="NavBarButton" id="Login">
+						<a href="./pages/Signin.html">
 							<button class="button ButtonOutlined">Login</button>
 						</a>
 					</div>
@@ -144,21 +145,21 @@
 					<div class="cardTeam">
 						<h2>Gustavo Neves</h2>
 						<img src="./images/TeamImages/Gustavo.jpg" alt="Gustavo Neves" />
-						<a href="https://www.linkedin.com/">
+						<a href="https://www.linkedin.com/" target="_blank">
 							<img src="./images/icons/linkedin.svg" alt="linkedin" />
 						</a>
 					</div>
 					<div class="cardTeam">
 						<h2>Aracele Garcia</h2>
 						<img src="./images/TeamImages/Aracele.jpg" alt="Aracele Garcia" />
-						<a href="https://www.linkedin.com/">
+						<a href="https://www.linkedin.com/" target="_blank">
 							<img src="./images/icons/linkedin.svg" alt="linkedin" />
 						</a>
 					</div>
 					<div class="cardTeam">
 						<h2>Lara Milena</h2>
 						<img src="./images/TeamImages/Lara.jpg" alt="Lara Milena" />
-						<a href="https://www.linkedin.com/">
+						<a href="https://www.linkedin.com/" target="_blank">
 							<img src="./images/icons/linkedin.svg" alt="linkedin" />
 						</a>
 					</div>
@@ -168,14 +169,14 @@
 							src="./images/TeamImages/Vinicius.jpg"
 							alt="Vinicius da Silva"
 						/>
-						<a href="https://www.linkedin.com/">
+						<a href="https://www.linkedin.com/" target="_blank">
 							<img src="./images/icons/linkedin.svg" alt="linkedin" />
 						</a>
 					</div>
 					<div class="cardTeam">
 						<h2>Bhryan Stepenhen</h2>
 						<img src="https://github.com/BhryanS2.png" alt="Bhryan Stepenhen" />
-						<a href="https://www.linkedin.com/bhryanstepenhen/">
+						<a href="https://www.linkedin.com/in/bhryanstepenhen/">
 							<img src="./images/icons/linkedin.svg" alt="linkedin" />
 						</a>
 					</div>
@@ -194,7 +195,6 @@
 					<div class="ContactIconsContainer">
 						<a
 							href="https://www.instagram.com/espacomakermuzambinho/"
-							target="_blank"
 							rel="noopener noreferrer"
 						>
 							<img src="./images/icons/Instagram.svg" alt="Instagram" />
@@ -202,7 +202,6 @@
 						</a>
 						<a
 							href="mailto:espaco.maker@muz.ifsuldeminas.edu.br"
-							target="_blank"
 							rel="noopener noreferrer"
 						>
 							<img src="./images/icons/Gmail.svg" alt="Gmail" />
@@ -238,6 +237,9 @@
 			<p>Política de Privacidade</p>
 			<p>Copyright &copy; 2021 Espaço Maker</p>
 		</footer>
+		<div id="goTop">
+			<img src="./images/icons/goTop.svg" alt="goTop" />
+		</div>
 
 		<script src="./scripts/navBar.js"></script>
 		<script src="./scripts/Message.js"></script>

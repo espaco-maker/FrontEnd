@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="shortcut icon" href="../images/Logo.svg" type="image/svg" />
+		<link rel="stylesheet" href="../styles/global.css" />
+		<link rel="stylesheet" href="../styles/espacomaker.css" />
+		<link rel="stylesheet" href="../styles/Signin.css" />
+		<script src="../scripts/signin/index.js" defer></script>
+		<title>Login</title>
+	</head>
+	<body>
+		<main>
+			<section class="EspacoMakerContainer">
+				<div class="background">
+					<img src="../images/Background.svg" alt="Background" />
+				</div>
+				<div class="logoContainer">
+					<div class="logo">
+						<img src="../images/Logo.svg" alt="Logo" />
+						<h2 class="logoTitle">Espaço Maker</h2>
+					</div>
+					<div class="logoSubtitle">
+						<p>Aprenda a cultura maker.</p>
+					</div>
+				</div>
+			</section>
+			<section class="w-50 formContainer">
+				<h1>Fazer login</h1>
+				<p id="error-message"></p>
+				<form id="SigninForm">
+					<div class="formInput">
+						<input type="email" name="email" id="email" required />
+						<label for="email">E-mail</label>
+					</div>
+					<div class="formInput last">
+						<input type="password" name="password" id="password" required />
+						<label for="password">Senha</label>
+						<img
+							src="../images/icons/hide.svg"
+							alt="toggle"
+							onclick="togglePassword()"
+							id="eye-icon"
+						/>
+					</div>
+					<div class="Options">
+						<div onclick="checkInput(this)" class="checkboxContainer">
+							<input type="checkbox" name="remember" id="remember" />
+							<div class="checkbox">
+								<img src="../images/checkbox.svg" alt="Checkbox" />
+							</div>
+							<label for="remember">Lembrar-me</label>
+						</div>
+						<div>
+							<a href="../pages/ForgetPassword.html">Esqueci minha senha</a>
+						</div>
+					</div>
+					<div class="btn-Container">
+						<button type="submit">Entrar</button>
+					</div>
+				</form>
+				<footer>
+					<div class="Signup">
+						<p>Não tem uma conta?</p>
+						<a href="../pages/Signup.html">Cadastre-se</a>
+					</div>
+					<div class="commenter">
+						<p>
+							É de graça
+							<svg
+								width="14"
+								height="12"
+								viewBox="0 0 14 12"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M14 3.69254C14 1.65319 12.2708 0 10.1382 0C8.84344 0 7.70098 0.611057 7 1.54504C6.29902 0.611057 5.15656 0 3.86223 0C1.72916 0 0 1.65281 0 3.69254C0 3.98141 0.0383562 4.26131 0.10411 4.5311C0.640313 7.71661 4.34481 11.0772 7 12C9.6548 11.0772 13.3597 7.71661 13.8951 4.53148C13.9616 4.26169 14 3.98179 14 3.69254Z"
+									fill="#FF941A"
+								/>
+							</svg>
+						</p>
+					</div>
+				</footer>
+			</section>
+		</main>
+	</body>
+</html>
