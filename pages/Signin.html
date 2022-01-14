@@ -15,8 +15,8 @@
 		<link rel="stylesheet" href="../styles/espacomaker.css" />
 		<link rel="stylesheet" href="../styles/Signin.css" />
 		<link rel="stylesheet" href="../styles/form.css" />
-		<script src="../scripts/signin/index.js" defer></script>
-		<script src="../scripts/form.js" defer></script>
+		<script src="../scripts/signin/index.js" type="module" defer></script>
+		<script src="../scripts/form.js" type="module" defer></script>
 		<title>Login</title>
 	</head>
 	<body>
@@ -46,15 +46,10 @@
 					<div class="formInput last">
 						<input type="password" name="password" id="password" required />
 						<label for="password">Senha</label>
-						<img
-							src="../images/icons/hide.svg"
-							alt="toggle"
-							onclick="togglePassword()"
-							class="eye-icon"
-						/>
+						<img src="../images/icons/hide.svg" alt="toggle" class="eye-icon" />
 					</div>
 					<div class="Options">
-						<div onclick="checkInput(this)" class="checkboxContainer">
+						<div class="checkboxContainer">
 							<input type="checkbox" name="remember" id="remember" />
 							<div class="checkbox">
 								<img src="../images/checkbox.svg" alt="Checkbox" />

@@ -562,6 +562,17 @@
 	height: 100%;
 }
 
+div.error {
+	color: var(--color-red);
+	font-size: 1.3rem;
+	text-align: center;
+	padding: 0.2rem 0;
+}
+
+div.error.success {
+	color: var(--color-secondary);
+}
+
 @media (min-width: 800px) {
 	.NavBarButtonIconContainer {
 		height: 0;

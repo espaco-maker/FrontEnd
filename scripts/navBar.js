@@ -1,3 +1,5 @@
+import { user as User } from "./user.js";
+
 function ToggleDropDown() {
   const width = window.innerWidth;
   if (width > 800) return;
@@ -38,22 +40,18 @@ document
 
 addEventListener("load", () => {
   const div = document.querySelector("#Login");
-  const { FirstName } = getUser();
-  if (FirstName) {
-    div.innerHTML = `
-    <p class="UserName">Olá ${FirstName}</p>
-    `;
+  const user = User.get();
+  if (user) {
+    const { FirstName } = user;
+    if (FirstName) {
+      div.innerHTML = `
+      <p class="UserName">Olá ${FirstName}</p>
+      `;
+    }
+    veifyToken();
   }
-  veifyToken();
 })
 
-function getUser() {
-  const user = localStorage.getItem("@EspacoMaker:user");
-  if (user) {
-    return JSON.parse(user);
-  }
-  return null;
-}
 
 async function veifyToken() {
   const token = localStorage.getItem("@EspacoMaker:token");
