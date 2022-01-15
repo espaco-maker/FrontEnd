@@ -1,4 +1,5 @@
-import { user as User } from "./user.js";
+import { User } from "./user.js";
+import { API } from "./API.js";
 
 function ToggleDropDown() {
   const width = window.innerWidth;
@@ -54,30 +55,9 @@ addEventListener("load", () => {
 
 
 async function veifyToken() {
-  const token = localStorage.getItem("@EspacoMaker:token");
-  if (token) {
-    const url = "http://localhost:8000/user/valdiateToken";
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ token }),
-    };
-    try {
-      const response = await fetch(url, options);
-      const json = await response.json();
-      if (!json.success) {
-        throw new Error(json.error);
-      }
-    } catch (error) {
-      localStorage.removeItem("@EspacoMaker:token");
-      localStorage.removeItem("@EspacoMaker:user");
-      addLinkToLogin();
-    }
-  }
-  return false;
+  const isValid = await API.veifyToken();
+  if (isValid) return;
+  addLinkToLogin();
 }
 
 function addLinkToLogin() {

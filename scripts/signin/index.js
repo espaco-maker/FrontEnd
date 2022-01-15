@@ -1,5 +1,5 @@
-import { API_URL } from '../constants.js';
-import { TogglePassword, formUtils, OptionsFetch } from '../form.js';
+import { API } from '../API.js';
+import { TogglePassword, formUtils } from '../form.js';
 
 const checkbox = document.querySelector('.checkboxContainer');
 const inputPasswordImage = document.querySelector('.eye-icon');
@@ -21,48 +21,42 @@ const form = document.querySelector('#SigninForm');
 form.addEventListener('submit', handleSubmit);
 
 
+function showMessages(messages = [], success = true) {
+  const divEl = document.querySelector('.error-message');
+  divEl.innerHTML = "";
+  const paragraphs = messages.map(message => {
+    const pEl = document.createElement('p');
+    pEl.textContent = message;
+    return pEl;
+  });
+  divEl.append(...paragraphs);
+  if (success) {
+    divEl.classList.add('success');
+  }
+}
+
 async function handleSubmit(event) {
   event.preventDefault();
-  const email = document.querySelector('#email').value;
-  const password = document.querySelector('#password').value;
+  const Email = document.querySelector('#email').value;
+  const Password = document.querySelector('#password').value;
   const remember = document.querySelector('#remember').checked;
   const errors = formUtils.validadeForm("SigninForm");
   if (errors.length > 0) {
-    alert(errors.join('\n'));
+    showMessages(errors, false);
     return;
   }
   const data = {
-    email,
-    password,
+    Email,
+    Password,
     remember
   };
-  const url = `${API_URL}/user/login`;
-  const options = OptionsFetch.getOptions('POST', data);
   try {
-    if (!navigator.onLine) {
-      throw new Error('Sem conexão com a internet');
+    const response = await API.signin(data);
+    if (!response.message) {
+      throw new Error("Erro ao realizar login");
     }
-    const response = await fetch(url, options);
-    const json = await response.json();
-    if (!json.success) {
-      throw new Error(json.error);
-    }
-    const { user, token } = json.response;
-    console.log(user);
-    saveUser(user);
-    saveToken(token);
-    window.location.href = '../index.php';
+    showMessages(["Login realizado com sucesso"], false);
   } catch (error) {
-    const errorMessage = document.querySelector('.error-message');
-    formUtils.showErrors(error, errorMessage);
+    showMessages([error.message], false);
   }
-
-}
-
-function saveUser(user) {
-  localStorage.setItem('@EspacoMaker:user', JSON.stringify(user));
-}
-
-function saveToken(token) {
-  localStorage.setItem('@EspacoMaker:token', token);
 }

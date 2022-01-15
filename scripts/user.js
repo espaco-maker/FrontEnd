@@ -1,4 +1,4 @@
-export const user = {
+export const User = {
   get() {
     const user = localStorage.getItem("@EspacoMaker:user");
     if (user) {
@@ -12,7 +12,8 @@ export const user = {
     LastName: "",
     id: -1,
   }) {
-    if (user.id === -1) {
+    if (user.id) {
+      console.log(user);
       throw new Error("User não pode ser nulo");
     }
     localStorage.setItem("@EspacoMaker:user", JSON.stringify(user));

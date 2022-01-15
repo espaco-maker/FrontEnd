@@ -116,16 +116,3 @@ export const formUtils = {
     errorMessage.classList.add('active');
   }
 }
-
-export const OptionsFetch = {
-  getOptions(method = "GET", data = {}) {
-    const options = {
-      method: method,
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    };
-    return options;
-  }
-}

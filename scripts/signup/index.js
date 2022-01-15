@@ -1,4 +1,4 @@
-import { API_URL } from '../constants.js';
+import { API } from '../API.js';
 import { TogglePassword, formUtils as formClass } from '../form.js';
 import { goBack } from '../goBack.js';
 
@@ -29,7 +29,7 @@ const utils = {
     classList.add('active');
     errors.forEach(obj => {
       const errorRef = document.createElement('p');
-      errorRef.textContent = `${obj.name}: ${obj.message}`;
+      errorRef.textContent = `${obj.name ? obj.name + " :" : ""} ${obj.message}`;
       errorsRef.appendChild(errorRef);
     });
 
@@ -43,7 +43,6 @@ const utils = {
     }
   },
 }
-
 
 const formUtils = {
   getData() {
@@ -67,34 +66,30 @@ const formUtils = {
     }
     utils.clearErrors();
     const dataArray = this.getData();
-    const dataObject = {};
-    dataArray.forEach(data => {
-      dataObject[data.name] = data.value;
-    });
-    await formUtils.fetchAPI(dataArray);
+    const data = {};
+    dataArray.reduce((acc, curr) => {
+      acc[curr.name] = curr.value;
+      return acc;
+    }, data);
+    await formUtils.fetchAPI(data);
   },
   async fetchAPI(data) {
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    };
-    const url = `${API_URL}/user/singup'`;
     try {
-      const response = await fetch(url, options);
-      const json = await response.json();
-      if (!json.success) {
-        this.showErrors([{
+      const response = await API.signup(data);
+      if (response.error) {
+        utils.showErrors([{
           name: '',
-          message: json.message
+          message: response.error
         }])
         return;
       }
-      window.location.href = './pages/success.html';
+      window.location.href = '../pages/Signin.html';
     } catch (error) {
-      console.log(error.message);
+      console.log("error", error);
+      utils.showErrors([{
+        name: '',
+        message: error.message ? error.message : "Erro ao cadastrar"
+      }]);
     }
   },
 

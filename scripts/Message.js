@@ -1,6 +1,5 @@
-import { OptionsFetch } from "./form.js";
-import { API_URL } from './constants.js';
-import { user as User } from "./user.js";
+import { API } from "./API.js";
+import { User } from "./user.js";
 
 const form = document.querySelector('#Message')
 form.addEventListener('submit', handleSubmit);
@@ -36,21 +35,12 @@ function handleSubmit(event) {
 }
 
 async function sendMessage(values = {}) {
-  const options = OptionsFetch.getOptions("POST", values);
   try {
-    const response = await fetch(`${API_URL}/user/Messages`, options);
-    const data = await response.json();
-    if (!data.success) {
-      throw new Error(data.message);
-    }
-    const divEl = document.querySelector('.error');
-    divEl.innerHTML = "";
-    divEl.classList.add('success');
-    const pEl = document.createElement('p');
-    pEl.textContent = data.message;
-    divEl.appendChild(pEl);
+    response = await API.sendMessage(values);
+    if (response.error) throw new Error("Erro ao enviar mensagem");
+    showMessage("Mensagem enviada com sucesso");
   } catch (error) {
-    console.log(error);
+    showMessage("Não foi possível enviar a mensagem", false);
   }
 }
 
@@ -64,3 +54,15 @@ window.addEventListener('load', () => {
   Name.value = user.FirstName + ' ' + user.LastName;
   Email.value = user.Email;
 });
+
+
+function showMessage(message, success = true) {
+  const paragraph = document.createElement('p');
+  paragraph.textContent = message;
+  const divEl = document.querySelector('.error');
+  divEl.innerHTML = "";
+  if (success) {
+    divEl.classList.add('success');
+  }
+  divEl.append(paragraph);
+}
