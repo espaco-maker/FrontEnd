@@ -1,5 +1,5 @@
 import { API } from '../API/index.js';
-import { TogglePassword, formUtils } from '../form.js';
+import { TogglePassword, formUtils } from '../utils/form.js';
 import { To } from '../utils/promise.js';
 
 const checkbox = document.querySelector('.checkboxContainer');

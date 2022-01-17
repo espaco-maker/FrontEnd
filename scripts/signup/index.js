@@ -1,6 +1,6 @@
 import { API } from '../API/index.js';
-import { TogglePassword, formUtils as formClass } from '../form.js';
-import { goBack } from '../goBack.js';
+import { TogglePassword, formUtils as formClass } from '../utils/form.js';
+import { goBack } from '../utils/goBack.js';
 import { To } from '../utils/promise.js';
 
 const inputPassword = document.querySelector('#password');

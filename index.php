@@ -11,8 +11,8 @@
   <link rel="shortcut icon" href="./images/Logo.svg" type="image/svg" />
   <link rel="stylesheet" href="./styles/global.css" />
   <link rel="stylesheet" href="./styles/style.css" />
-  <script src="./scripts/navBar.js" type="module" defer></script>
-  <script src="./scripts/Message.js" type="module" defer></script>
+  <script src="./scripts/pages/navBar.js" type="module" defer></script>
+  <script src="./scripts/pages/Message.js" type="module" defer></script>
   <title>Espaço Maker</title>
 </head>
 
@@ -61,7 +61,7 @@
           Veja aqui soluções que pessoas encontraram para seus problemas do
           cotidiano!
         </h1>
-        <button class="button">Começar agora</button>
+        <a href="./pages/Signin.html"><button class="button">Começar agora</button></a>
       </div>
       <img src="./images/Maker.svg" alt="Imagem qeu contém referência a cultura maker" />
     </section>

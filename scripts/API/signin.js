@@ -1,4 +1,4 @@
-import { User } from "../user.js";
+import { User } from "../utils/user.js";
 import { base_URL, Options } from "./options.js";
 import { To } from "../utils/promise.js";
 

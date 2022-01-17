@@ -1,5 +1,5 @@
-import { User } from "./user.js";
-import { API } from "./API/index.js";
+import { User } from "../utils/user.js";
+import { API } from "../API/index.js";
 
 function ToggleDropDown() {
   const width = window.innerWidth;

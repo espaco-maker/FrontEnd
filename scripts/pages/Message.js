@@ -1,5 +1,5 @@
-import { API } from "./API/index.js";
-import { User } from "./user.js";
+import { API } from "../API/index.js";
+import { User } from "../utils/user.js";
 
 const form = document.querySelector('#Message')
 form.addEventListener('submit', handleSubmit);
