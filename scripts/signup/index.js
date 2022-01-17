@@ -1,6 +1,7 @@
-import { API } from '../API.js';
+import { API } from '../API/index.js';
 import { TogglePassword, formUtils as formClass } from '../form.js';
 import { goBack } from '../goBack.js';
+import { To } from '../utils/promise.js';
 
 const inputPassword = document.querySelector('#password');
 const ImagePasswordIcon = document.querySelector('.eye-icon');
@@ -74,23 +75,15 @@ const formUtils = {
     await formUtils.fetchAPI(data);
   },
   async fetchAPI(data) {
-    try {
-      const response = await API.signup(data);
-      if (response.error) {
-        utils.showErrors([{
-          name: '',
-          message: response.error
-        }])
-        return;
-      }
-      window.location.href = '../pages/Signin.html';
-    } catch (error) {
-      console.log("error", error);
+    const [error] = await To(API.signup(data));
+    if (error) {
       utils.showErrors([{
         name: '',
         message: error.message ? error.message : "Erro ao cadastrar"
       }]);
+      return;
     }
+    window.location.href = '../pages/Signin.html';
   },
 
 }

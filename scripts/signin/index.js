@@ -1,5 +1,6 @@
-import { API } from '../API.js';
+import { API } from '../API/index.js';
 import { TogglePassword, formUtils } from '../form.js';
+import { To } from '../utils/promise.js';
 
 const checkbox = document.querySelector('.checkboxContainer');
 const inputPasswordImage = document.querySelector('.eye-icon');
@@ -50,13 +51,13 @@ async function handleSubmit(event) {
     Password,
     remember
   };
-  try {
-    const response = await API.signin(data);
-    if (!response.message) {
-      throw new Error("Erro ao realizar login");
-    }
-    showMessages(["Login realizado com sucesso"], false);
-  } catch (error) {
+  const [error] = await To(API.signin(data));
+  if (error) {
     showMessages([error.message], false);
+    return;
   }
+  showMessages(["Login realizado com sucesso"], false);
+  setTimeout(() => {
+    window.location.href = '/';
+  }, 2000);
 }

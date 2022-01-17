@@ -10,12 +10,12 @@ export const User = {
     Email: "",
     FirstName: "",
     LastName: "",
-    id: -1,
+    id: 0,
   }) {
-    if (user.id) {
-      console.log(user);
-      throw new Error("User não pode ser nulo");
+    if (user.id <= 0) {
+      throw new Error("Erro, usuario não pode ser nulo");
     }
     localStorage.setItem("@EspacoMaker:user", JSON.stringify(user));
+    return;
   }
 }

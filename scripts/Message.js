@@ -1,4 +1,4 @@
-import { API } from "./API.js";
+import { API } from "./API/index.js";
 import { User } from "./user.js";
 
 const form = document.querySelector('#Message')
