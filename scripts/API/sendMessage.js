@@ -23,7 +23,6 @@ export const sendMessage = async (message = {
   }
   const json = await response.json();
   if (json.error) {
-    console.log(json.error);
     throw new Error(json.error);
   }
   return json.message;
