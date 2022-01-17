@@ -22,7 +22,8 @@ export const sendMessage = async (message = {
     throw new Error("Não foi possível enviar a mensagem");
   }
   const json = await response.json();
-  if (!json.success) {
+  if (json.error) {
+    console.log(json.error);
     throw new Error(json.error);
   }
   return json.message;

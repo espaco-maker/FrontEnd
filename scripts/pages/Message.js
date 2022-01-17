@@ -1,4 +1,5 @@
 import { API } from "../API/index.js";
+import { To } from "../utils/promise.js";
 import { User } from "../utils/user.js";
 
 const form = document.querySelector('#Message')
@@ -35,13 +36,12 @@ function handleSubmit(event) {
 }
 
 async function sendMessage(values = {}) {
-  try {
-    response = await API.sendMessage(values);
-    if (response.error) throw new Error("Erro ao enviar mensagem");
-    showMessage("Mensagem enviada com sucesso");
-  } catch (error) {
+  const [error] = await To(API.sendMessage(values));
+  if (error) {
     showMessage("Não foi possível enviar a mensagem", false);
+    return;
   }
+  showMessage("Mensagem enviada com sucesso", true);
 }
 
 window.addEventListener('load', () => {
@@ -65,4 +65,7 @@ function showMessage(message, success = true) {
     divEl.classList.add('success');
   }
   divEl.append(paragraph);
+  setTimeout(() => {
+    divEl.innerHTML = "";
+  }, 5000);
 }
