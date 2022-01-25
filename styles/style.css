@@ -571,6 +571,7 @@ div.error {
 
 div.error.success {
 	color: var(--color-secondary);
+	transition: all 0.3s ease-in-out;
 }
 
 @media (min-width: 800px) {
