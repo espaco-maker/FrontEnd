@@ -1,103 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="shortcut icon" href="../images/Logo.svg" type="image/svg" />
-		<link rel="stylesheet" href="../styles/global.css" />
-		<link rel="stylesheet" href="../styles/espacomaker.css" />
-		<link rel="stylesheet" href="../styles/form.css" />
-		<link rel="stylesheet" href="../styles/Signup.css" />
-		<script src="../scripts/utils/form.js" type="module" defer></script>
-		<script src="../scripts/signup/index.js" type="module" defer></script>
-		<title>Cadastro</title>
-	</head>
-	<body>
-		<main class="container">
-			<section class="w-50 formContainer">
-				<div class="goBack">
-					<img src="../images/goBack.svg" alt="&lt;---" />
-				</div>
-				<h1>Cadastro</h1>
-				<p class="error-message">
-					Preencha todos os campos abaixo para começar
-				</p>
-				<form id="SignupForm">
-					<div class="formInput">
-						<input type="text" name="FirstName" id="firstName" required />
-						<label for="firstName">Nome</label>
-					</div>
 
-					<div class="formInput">
-						<input type="text" name="LastName" id="lastName" required />
-						<label for="lastName">Sobrenome</label>
-					</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="../images/Logo.svg" type="image/svg" />
+  <link rel="stylesheet" href="../styles/global.css" />
+  <link rel="stylesheet" href="../styles/espacomaker.css" />
+  <link rel="stylesheet" href="../styles/form.css" />
+  <link rel="stylesheet" href="../styles/Signup.css" />
+  <script src="../scripts/utils/form.js" type="module" defer></script>
+  <script src="../scripts/signup/index.js" type="module" defer></script>
+  <script src="../scripts/components/slogam/index.js" type='module' defer></script>
+  <title>Cadastro</title>
+</head>
 
-					<div class="formInput">
-						<input type="email" name="Email" id="email" required />
-						<label for="email">E-mail</label>
-					</div>
+<body>
+  <main class="container">
+    <section class="w-50 formContainer">
+      <div class="goBack">
+        <img src="../images/icons/goBack.svg" alt="&lt;---" />
+      </div>
+      <h1>Cadastro</h1>
+      <p class="error-message">
+        Preencha todos os campos abaixo para começar
+      </p>
+      <form id="SignupForm">
+        <div class="formInput">
+          <input type="text" name="FirstName" id="firstName" required />
+          <label for="firstName">Nome</label>
+        </div>
 
-					<div class="formInput last">
-						<input
-							type="password"
-							name="Password"
-							id="password"
-							required
-							class="password"
-							value=""
-						/>
-						<label for="password">Senha</label>
-						<img src="../images/icons/hide.svg" alt="toggle" class="eye-icon" />
-						<div class="modalPassword">
-							<p>
-								<img src="../images/icons/close.svg" alt="X" />
-								<span>Letra maiúscula</span>
-							</p>
-							<p>
-								<img src="../images/icons/close.svg" alt="X" />
-								<span>Letra minúscula</span>
-							</p>
-							<p>
-								<img src="../images/icons/close.svg" alt="X" />
-								<span>Número</span>
-							</p>
-							<p>
-								<img src="../images/icons/close.svg" alt="X" />
-								<span>Caractere especial</span>
-							</p>
-							<p>
-								<img src="../images/icons/close.svg" alt="X" />
-								<span>Mais de 8 caracteres</span>
-							</p>
-						</div>
-					</div>
-					<div class="btn-Container">
-						<button type="submit">Entrar</button>
-					</div>
-				</form>
-			</section>
-			<section class="EspacoMakerContainer">
-				<div class="background">
-					<img src="../images/Background.svg" alt="Background" />
-				</div>
-				<div class="logoContainer">
-					<div class="logo">
-						<img src="../images/Logo.svg" alt="Logo" />
-						<h2 class="logoTitle">Espaço Maker</h2>
-					</div>
-					<div class="logoSubtitle">
-						<p>Aprenda a cultura maker.</p>
-					</div>
-				</div>
-			</section>
-		</main>
-	</body>
+        <div class="formInput">
+          <input type="text" name="LastName" id="lastName" required />
+          <label for="lastName">Sobrenome</label>
+        </div>
+
+        <div class="formInput">
+          <input type="email" name="Email" id="email" required />
+          <label for="email">E-mail</label>
+        </div>
+
+        <div class="formInput last">
+          <input type="password" name="Password" id="password" required class="password" value="" />
+          <label for="password">Senha</label>
+          <img src="../images/icons/hide.svg" alt="toggle" class="eye-icon" />
+          <div class="modalPassword">
+            <p>
+              <img src="../images/icons/close.svg" alt="X" />
+              <span>Letra maiúscula</span>
+            </p>
+            <p>
+              <img src="../images/icons/close.svg" alt="X" />
+              <span>Letra minúscula</span>
+            </p>
+            <p>
+              <img src="../images/icons/close.svg" alt="X" />
+              <span>Número</span>
+            </p>
+            <p>
+              <img src="../images/icons/close.svg" alt="X" />
+              <span>Caractere especial</span>
+            </p>
+            <p>
+              <img src="../images/icons/close.svg" alt="X" />
+              <span>Mais de 8 caracteres</span>
+            </p>
+          </div>
+        </div>
+        <div class="btn-Container">
+          <button type="submit">Entrar</button>
+        </div>
+      </form>
+    </section>
+    <slogam-forms backgroundpath="../images/Background.svg" logopath="../images/Logo.svg"></slogam-forms>
+
+  </main>
+</body>
+
 </html>

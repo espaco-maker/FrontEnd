@@ -1,6 +1,7 @@
 import { User } from "../utils/user.js";
 import { base_URL, Options } from "./options.js";
 import { To } from "../utils/promise.js";
+import { Tokens } from "../utils/tokens.js";
 
 const props = {
   Email: "",
@@ -20,7 +21,7 @@ export const signin = async (user = props) => {
     throw new Error(json.error);
   }
   const { user: UserRes, token } = json.response;
-  localStorage.setItem("@EspacoMaker:token", token);
+  localStorage.setItem(Tokens.tokenAccess, token);
   User.set(UserRes);
   return UserRes;
 }

@@ -1,5 +1,7 @@
+import { Tokens } from "../utils/tokens.js";
+
 export const Options = (method = "GET", data = {}) => {
-  const token = localStorage.getItem("@EspacoMaker:token");
+  const token = localStorage.getItem(Tokens.tokenAccess);
   const options = {
     method: method,
     headers: {

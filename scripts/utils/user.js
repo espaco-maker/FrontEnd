@@ -1,6 +1,8 @@
+import { Tokens } from "./tokens.js";
+
 export const User = {
   get() {
-    const user = localStorage.getItem("@EspacoMaker:user");
+    const user = localStorage.getItem(Tokens.user);
     if (user) {
       return JSON.parse(user);
     }
@@ -15,7 +17,11 @@ export const User = {
     if (user.id <= 0) {
       throw new Error("Erro, usuario não pode ser nulo");
     }
-    localStorage.setItem("@EspacoMaker:user", JSON.stringify(user));
+    localStorage.setItem(Tokens.user, JSON.stringify(user));
     return;
-  }
+  },
+  logout() {
+    localStorage.removeItem(Tokens.user);
+    localStorage.removeItem(Tokens.tokenAccess);
+  },
 }

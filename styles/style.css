@@ -1,712 +1,735 @@
-#root {
-	background-color: var(--gray-500);
-	min-height: 100vh;
-	max-width: 100vw;
-	overflow: hidden;
-	scroll-behavior: smooth;
+body {
+  background-color: var(--gray-500);
+  min-height: 100vh;
+  max-width: 100vw;
+  scroll-behavior: smooth;
 }
 
 .AboutContainer {
-	background-color: var(--gray-700);
-	min-height: 70vh;
-	font-family: "Poppins", arial, sans-serif;
+  background-color: var(--gray-700);
+  min-height: 70vh;
+  font-family: "Poppins", arial, sans-serif;
 }
 
 .AboutContainer > h1 {
-	padding: 0.5rem;
-	text-align: center;
-	color: var(--color-white);
-	font-family: "Poppins", sans-serif;
-	font-weight: bold;
-	width: 100%;
-	padding: 2rem 0;
+  padding: 0.5rem;
+  text-align: center;
+  color: var(--color-white);
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  width: 100%;
+  padding: 2rem 0;
 }
 
 .AboutCardsContainer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-flow: row wrap;
-	padding: 1rem 0;
-	grid-gap: 1rem;
-	gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  padding: 1rem 0;
+  grid-gap: 1rem;
+  gap: 1rem;
 }
 
 .AboutCardsContainer > div {
-	max-width: 400px;
-	height: 300px;
-	margin: 0;
+  max-width: 400px;
+  height: 300px;
+  margin: 0;
 }
 
 .AboutContainer > div {
-	margin: 0 auto;
-	max-width: 400px;
-	text-align: center;
+  margin: 0 auto;
+  max-width: 400px;
+  text-align: center;
 }
 
 @media (min-width: 800px) {
-	.AboutContainer > div {
-		max-width: 70%;
-		height: 200px;
-		display: flex;
-		text-align: center;
-	}
-	.AboutContainer > div p,
-	.AboutCardsContainer p {
-		font-size: 1.3rem;
-	}
-	.AboutContainer > div h2,
-	.AboutCardsContainer h2 {
-		font-size: 1.5rem;
-	}
+  .AboutContainer > div {
+    max-width: 70%;
+    height: 200px;
+    display: flex;
+    text-align: center;
+  }
+  .AboutContainer > div p,
+  .AboutCardsContainer p {
+    font-size: 1.3rem;
+  }
+  .AboutContainer > div h2,
+  .AboutCardsContainer h2 {
+    font-size: 1.5rem;
+  }
 }
 .card {
-	width: 100%;
-	height: 100%;
-	color: var(--color-white);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 1rem;
-	border-radius: 2rem;
-	border: 2px solid var(--gray-300);
-	background-color: var(--gray-400);
-	font-family: "Poppins", arial, sans-serif;
-	grid-gap: 1rem;
-	gap: 1rem;
-	max-width: 350px;
-	max-height: 350px;
+  width: 100%;
+  height: 100%;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 2rem;
+  border: 2px solid var(--gray-300);
+  background-color: var(--gray-400);
+  font-family: "Poppins", arial, sans-serif;
+  grid-gap: 1rem;
+  gap: 1rem;
+  max-width: 350px;
+  max-height: 350px;
 }
 
 .card img {
-	width: 100%;
-	height: 100%;
-	max-width: 300px;
-	max-height: 250px;
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 250px;
 }
 
 .card h2 {
-	word-break: keep-all;
-	width: auto;
-	text-align: center;
+  word-break: keep-all;
+  width: auto;
+  text-align: center;
 }
 
 .cardText {
-	max-width: none;
-	max-height: none;
+  max-width: none;
+  max-height: none;
 }
 
 .cardText p {
-	text-align: center;
-	width: 100%;
+  text-align: center;
+  width: 100%;
 }
 
 .cardTeam {
-	background: none;
-	width: 100%;
-	margin: 0 auto;
-	max-width: 350px;
-	padding: 0.5rem;
+  background: none;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 350px;
+  padding: 0.5rem;
 
-	text-align: center;
+  text-align: center;
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-	grid-gap: 1rem;
+  grid-gap: 1rem;
 
-	gap: 1rem;
+  gap: 1rem;
 
-	color: var(--color-white);
-	border: 3px solid var(--color-primary);
+  color: var(--color-white);
+  border: 3px solid var(--color-primary);
 
-	border-radius: 1rem;
-	transition: all 0.3s ease-in-out;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .cardTeam:hover {
-	transform: translateY(-5px);
-	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .cardTeam > img {
-	width: 100%;
-	height: auto;
-	border-radius: 50%;
-	max-width: 200px;
-	-o-object-fit: cover;
-	object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  max-width: 200px;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 @media (min-width: 800px) {
-	.card {
-		width: 100%;
-	}
-	.cardTeam {
-		margin: 1rem;
-	}
+  .card {
+    width: 100%;
+  }
+  .cardTeam {
+    margin: 1rem;
+  }
 }
 .InputContainer {
-	width: 100%;
-	background-color: var(--gray-500);
-	border: 0;
-	display: flex;
-	justify-content: center;
-	padding: 0.7rem;
-	height: 100%;
-	color: var(--color-white);
+  width: 100%;
+  background-color: var(--gray-500);
+  border: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0.7rem;
+  height: 100%;
+  color: var(--color-white);
 }
 .InputContainer > div {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	padding: 0.7rem;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0.7rem;
 }
 
 .InputContainer input {
-	background: none;
-	border: none;
-	outline: none;
-	font-family: "Poppins", arial, sans-serif;
-	font-size: 1.1rem;
-	position: relative;
-	height: 100%;
-	width: 100%;
-	padding: 0.2rem;
-	color: var(--gray);
+  background: none;
+  border: none;
+  outline: none;
+  font-family: "Poppins", arial, sans-serif;
+  font-size: 1.1rem;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 0.2rem;
+  color: var(--gray);
 }
 .InputContainer input ~ label {
-	position: absolute;
-	height: 100%;
-	left: 2%;
-	transition: 0.4s;
-	pointer-events: none;
-	font-family: "Poppins", arial, sans-serif;
+  position: absolute;
+  height: 100%;
+  left: 2%;
+  transition: 0.4s;
+  pointer-events: none;
+  font-family: "Poppins", arial, sans-serif;
 }
 
 .InputContainer input:focus ~ label,
 .InputContainer input:valid ~ label {
-	transform: translateY(-24px);
-	font-size: 0.8em;
-	letter-spacing: 0.1em;
-	padding-top: 0.5rem;
+  transform: translateY(-24px);
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  padding-top: 0.5rem;
 }
 .TextareaContainer {
-	display: flex;
-	flex-direction: column;
-	background-color: var(--gray-500);
-	padding: 0.5rem;
-	width: 100%;
-	font-family: "Poppins", arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--gray-500);
+  padding: 0.5rem;
+  width: 100%;
+  font-family: "Poppins", arial, sans-serif;
 }
 
 .TextareaContainer {
-	background-color: var(--gray-500);
-	border: 0;
-	display: flex;
-	justify-content: center;
-	padding: 0.7rem;
-	height: 100%;
-	color: var(--color-white);
+  background-color: var(--gray-500);
+  border: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0.7rem;
+  height: 100%;
+  color: var(--color-white);
 }
 .TextareaContainer > div {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	padding: 0.7rem;
-	min-height: 2em;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0.7rem;
+  min-height: 2em;
 }
 
 .TextareaContainer textarea {
-	background: none;
-	border: none;
-	outline: none;
-	font-family: "Poppins", arial, sans-serif;
-	font-size: 1.1rem;
-	position: relative;
-	height: 100%;
-	width: 100%;
-	padding: 0.2rem;
-	color: var(--gray);
-	resize: none;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: "Poppins", arial, sans-serif;
+  font-size: 1.1rem;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 0.2rem;
+  color: var(--gray);
+  resize: none;
 }
 .TextareaContainer textarea ~ label {
-	position: absolute;
-	height: 100%;
-	left: 2%;
-	transition: 0.4s;
-	pointer-events: none;
-	font-family: "Poppins", arial, sans-serif;
+  position: absolute;
+  height: 100%;
+  left: 2%;
+  transition: 0.4s;
+  pointer-events: none;
+  font-family: "Poppins", arial, sans-serif;
 }
 
 .TextareaContainer textarea:focus ~ label,
 .TextareaContainer textarea:valid ~ label {
-	transform: translateY(-24px);
-	font-size: 0.8em;
-	letter-spacing: 0.1em;
-	padding-top: 0.5rem;
+  transform: translateY(-24px);
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  padding-top: 0.5rem;
 }
 .button {
-	width: 10em;
-	height: 3em;
-	font-size: 16px;
-	font-family: "Poppins", arial, sans-serif;
-	color: var(--color-white);
-	background: var(--color-primary);
-	transition: all 0.2s ease-in-out;
-	border: none;
-	border-radius: 0.4rem;
+  width: 10em;
+  height: 3em;
+  font-size: 16px;
+  font-family: "Poppins", arial, sans-serif;
+  color: var(--color-white);
+  background: var(--color-primary);
+  transition: all 0.2s ease-in-out;
+  border: none;
+  border-radius: 0.4rem;
 }
 
 .button:hover {
-	filter: brightness(0.8);
+  filter: brightness(0.8);
 }
 
 .button.ButtonOutlined {
-	border: 2px solid var(--color-primary);
-	background: transparent;
-	color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
 }
 
 .button.ButtonOutlined:hover {
-	background: var(--color-primary);
-	color: var(--color-white);
-	filter: none;
+  background: var(--color-primary);
+  color: var(--color-white);
+  filter: none;
 }
 .ContactContainer {
-	background-color: var(--gray-700);
-	padding: 1rem 0;
-	font-family: "Poppins", arial, sans-serif;
+  background-color: var(--gray-700);
+  padding: 1rem 0;
+  font-family: "Poppins", arial, sans-serif;
 }
 
 .ContactContainer > h1 {
-	padding: 0.5rem;
-	text-align: center;
-	color: var(--color-white);
-	font-family: "Poppins", sans-serif;
-	font-weight: bold;
+  padding: 0.5rem;
+  text-align: center;
+  color: var(--color-white);
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
 }
 
 .Location {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 0.5rem;
-	color: var(--color-white);
-	font-family: "Poppins", sans-serif;
-	grid-gap: 0.5rem;
-	gap: 0.5rem;
-	text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  color: var(--color-white);
+  font-family: "Poppins", sans-serif;
+  grid-gap: 0.5rem;
+  gap: 0.5rem;
+  text-align: center;
 }
 
 .Location h1,
 .Location h2 {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .ContactIconsContainer {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	grid-gap: 25%;
-	gap: 25%;
-	padding: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 25%;
+  gap: 25%;
+  padding: 2rem;
 }
 .ContactIconsContainer img {
-	width: 48px;
-	height: 48px;
-	pointer-events: none;
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
 }
 .Form {
-	width: 90%;
-	max-width: 800px;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	grid-gap: 1rem;
-	gap: 1rem;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 1rem;
+  gap: 1rem;
 }
 
 .Contact_Error__2EyHO {
-	text-align: center;
-	color: var(--color-red);
-	width: 100%;
-	padding: 0.5rem 0;
+  text-align: center;
+  color: var(--color-red);
+  width: 100%;
+  padding: 0.5rem 0;
 }
 
 .Contact_ErrorInput__CAapT {
-	border: 1px solid var(--color-red);
+  border: 1px solid var(--color-red);
 }
 
-.ContactIconsContainer a .Tooltip {
-	position: absolute;
-	left: 50%;
-	top: 0;
-	transform: translate(-50%, -50%);
-	border-radius: 6px;
-	height: 35px;
-	width: 122px;
-	background-color: var(--color-white);
-	line-height: 35px;
-	text-align: center;
-	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-	transition: 0s;
-	opacity: 0;
-	pointer-events: none;
-	color: #000;
+.Tooltip {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  height: 35px;
+  width: 122px;
+  background-color: var(--color-white);
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0s;
+  opacity: 0;
+  pointer-events: none;
+  color: #000;
 }
 
 .ContactIconsContainer a {
-	position: relative;
-	transition: all 0.4s ease;
+  position: relative;
+  transition: all 0.4s ease;
 }
 
 .ContactIconsContainer a:hover .Tooltip {
-	transition: all 0.5s ease;
-	opacity: 1;
-	top: -50%;
+  transition: all 0.5s ease;
+  opacity: 1;
+  top: -50%;
 }
 .CourseContainer {
-	background-color: var(--gray-500);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	min-height: 70vh;
-	font-family: "Poppins", arial, sans-serif;
+  background-color: var(--gray-500);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  font-family: "Poppins", arial, sans-serif;
 }
 
 .CourseContainer > h1 {
-	padding: 2rem 0;
-	text-align: center;
-	color: var(--color-white);
-	font-family: "Poppins", sans-serif;
-	font-weight: bold;
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--color-white);
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
 }
 
 .ContainerCards {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	grid-gap: 1rem;
-	gap: 1rem;
-	padding: 1rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  grid-gap: 1rem;
+  gap: 1rem;
+  padding: 1rem 0;
 }
 .Footer {
-	background-color: var(--gray-500);
-	color: var(--color-white);
-	text-align: center;
-	width: 100%;
-	line-height: 30px;
-	padding: 1rem;
-	font-family: "Poppins", arial, sans-serif;
+  background-color: var(--gray-500);
+  color: var(--color-white);
+  text-align: center;
+  width: 100%;
+  line-height: 30px;
+  padding: 1rem;
+  font-family: "Poppins", arial, sans-serif;
 }
 .NavBarContainer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: var(--gray-500);
-	position: relative;
-	height: 50px;
-	font-family: "Poppins", arial, sans-serif;
-	scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray-500);
+  position: relative;
+  height: 50px;
+  font-family: "Poppins", arial, sans-serif;
+  scroll-behavior: smooth;
 }
 
 .NavBarContainer > nav {
-	width: 100%;
-	position: fixed;
-	top: 0;
-	background-color: var(--gray-500);
-	z-index: 5;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: var(--gray-500);
+  z-index: 5;
 }
 
 .NavBarWraper {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-	height: 100%;
-	padding: 0.5rem 1rem;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .NavBarWraper > img {
-	width: 48px;
-	height: 48px;
-	border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
 }
 
 .NavBarListContainer:not(.active) {
-	opacity: 0;
-	pointer-events: none;
-	height: 0;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
 }
 
 .NavBarListContainer.active {
-	transition: all 0.3s ease-in;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
-	grid-gap: 0.5rem;
-	gap: 0.5rem;
-	background-color: var(--gray-700);
-	width: 100%;
-	height: 100%;
-	padding: 0.2rem 0.5rem 1rem;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  grid-gap: 0.5rem;
+  gap: 0.5rem;
+  background-color: var(--gray-700);
+  width: 100%;
+  height: 100%;
+  padding: 0.2rem 0.5rem 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .NavBarListContainer li {
-	width: 100%;
-	padding: 0.5rem;
-	list-style: none;
+  width: 100%;
+  padding: 0.5rem;
+  list-style: none;
 }
 
 .NavBarListContainer > div:first-child {
-	width: 100%;
+  width: 100%;
 }
 
 .NavBarListContainer li:hover,
 .NavBarListContainer li.active {
-	border-left: 2px solid var(--color-primary);
-	background: linear-gradient(90deg, #30444e 0%, #22343c 100%);
+  border-left: 2px solid var(--color-primary);
+  background: linear-gradient(90deg, #30444e 0%, #22343c 100%);
 }
 
 .NavBarListContainer a {
-	text-decoration: none;
-	color: var(--gray-200);
-	font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: var(--gray-200);
+  font-family: "Poppins", sans-serif;
 }
 
 .closeNav:not(.active),
 .openNav:not(.active) {
-	opacity: 0;
-	pointer-events: none;
-	width: 0;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
 }
 
 .closeNav:not(.active) {
-	transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 .openNav:not(.active) {
-	transform: translateX(50%);
+  transform: translateX(50%);
 }
 
 .closeNav.active,
 .openNav.active {
-	transition: all 0.3s ease-in;
-	opacity: 1;
-	pointer-events: all;
-	transform: rotate(0deg);
+  transition: all 0.3s ease-in;
+  opacity: 1;
+  pointer-events: all;
+  transform: rotate(0deg);
 }
 
-.NavBar_buttonIconItem__28NS_ {
-	width: 48px;
-	height: 48px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 .NavBarButtonIcon {
-	background: transparent;
-	border: 0;
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 .NavBarButton {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 #Login p {
-	font-family: "Poppins", sans-serif;
-	font-size: 1.2rem;
-	color: var(--gray-200);
-	text-align: center;
-	padding: 0.2rem 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  color: var(--gray-200);
+  text-align: center;
+  padding: 0.2rem 0;
 }
 
 #Login p:hover {
-	border-bottom: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+#Login.logout {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.logoutContainer {
+  cursor: pointer;
+  width: 20px;
+  transition: all 0.4s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoutContainer .Tooltip {
+  transform: translate(-100%, 50%);
+}
+
+.logoutContainer:hover .Tooltip {
+  transition: all 0.5s ease;
+  opacity: 1;
+  bottom: 0;
+}
+
+.logoutContainer img {
+  width: 20px;
+  height: 20px;
 }
 
 #goTop {
-	position: fixed;
-	bottom: 2rem;
-	right: 1rem;
-	width: 48px;
-	height: 48px;
-	background: transparent;
-	border: 0;
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
-	display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: none;
 }
 
 #goTop.active {
-	transform: translateY(50%);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  transform: translateY(50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #goTop img {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 div.error {
-	color: var(--color-red);
-	font-size: 1.3rem;
-	text-align: center;
-	padding: 0.2rem 0;
+  color: var(--color-red);
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 0.2rem 0;
 }
 
 div.error.success {
-	color: var(--color-secondary);
-	transition: all 0.3s ease-in-out;
+  color: var(--color-secondary);
+  transition: all 0.3s ease-in-out;
 }
 
 @media (min-width: 800px) {
-	.NavBarButtonIconContainer {
-		height: 0;
-		width: 0;
-		overflow: hidden;
-		pointer-events: none;
-	}
-	.NavBarListContainer,
-	.NavBarListContainer:not(.active),
-	.NavBarListContainer.active {
-		pointer-events: all;
-		opacity: 1;
-		height: 50px;
-		width: calc(100% - 48px);
+  .NavBarButtonIconContainer {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .NavBarListContainer,
+  .NavBarListContainer:not(.active),
+  .NavBarListContainer.active {
+    pointer-events: all;
+    opacity: 1;
+    height: 50px;
+    width: calc(100% - 48px);
 
-		position: absolute;
-		top: 50%;
-		right: 0.5rem;
-		transform: translate(-0, -50%);
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform: translate(-0, -50%);
 
-		display: flex;
-		align-items: center;
-	}
+    display: flex;
+    align-items: center;
+  }
 
-	.NavBarListContainer li {
-		width: auto;
-		text-align: center;
-		border-bottom: 2px solid transparent;
-	}
+  .NavBarListContainer li {
+    width: auto;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+  }
 
-	.NavBarListContainer > div:first-child {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		grid-gap: 0.5rem;
-		gap: 0.5rem;
-		position: absolute;
-		width: auto;
-		left: 50%;
-		transform: translateX(calc(-50% - 48px));
-	}
+  .NavBarListContainer > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 0.5rem;
+    gap: 0.5rem;
+    position: absolute;
+    width: auto;
+    left: 50%;
+    transform: translateX(calc(-50% - 48px));
+  }
 
-	.NavBarListContainer li:hover,
-	.NavBarListContainer li.active {
-		border-left: 0;
-		border-bottom: 2px solid var(--color-primary);
-		background: none;
-	}
+  .NavBarListContainer li:hover,
+  .NavBarListContainer li.active {
+    border-left: 0;
+    border-bottom: 2px solid var(--color-primary);
+    background: none;
+  }
 
-	.NavBarButton {
-		margin: 0;
-		position: absolute;
-		right: 0.5rem;
-	}
+  .NavBarButton {
+    margin: 0;
+    position: absolute;
+    right: 0.5rem;
+  }
 }
 .StartContainer {
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	color: var(--color-white);
-	background: var(--gray-700);
-	padding: 1.5rem 0.8rem;
-	font-family: "Poppins", arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: var(--color-white);
+  background: var(--gray-700);
+  padding: 1.5rem 0.8rem;
+  font-family: "Poppins", arial, sans-serif;
 }
 
 .StartContainer > div {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	grid-gap: 2rem;
-	gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 2rem;
+  gap: 2rem;
 }
 
 .StartContainer > div h1 {
-	text-align: center;
-	font-size: 32px;
-	font-weight: bold;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .StartContainer > img {
-	display: none;
+  display: none;
 }
 
 @media (min-width: 800px) {
-	.StartContainer {
-		padding: 2rem 5rem;
-		min-height: 100vh;
-		display: inline-flex;
-		justify-content: center;
-		align-items: center;
-		grid-gap: 2rem;
-		gap: 2rem;
-	}
-	.StartContainer > img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		min-width: 350px;
-		min-height: 350px;
-	}
+  .StartContainer {
+    padding: 2rem 5rem;
+    min-height: 100vh;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2rem;
+    gap: 2rem;
+  }
+  .StartContainer > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 350px;
+    min-height: 350px;
+  }
 }
 
 @media (max-width: 1000px) {
-	.StartContainer {
-		display: inline-block;
-	}
-	.StartContainer > img {
-		max-width: 450px;
-		margin: 2rem auto;
-	}
+  .StartContainer {
+    display: inline-block;
+  }
+  .StartContainer > img {
+    max-width: 450px;
+    margin: 2rem auto;
+  }
 }
 .TeamContainer {
-	background-color: var(--gray-500);
-	padding: 1rem 0;
-	font-family: "Poppins", arial, sans-serif;
+  background-color: var(--gray-500);
+  padding: 1rem 0;
+  font-family: "Poppins", arial, sans-serif;
 }
 
 .TeamContainer > h1 {
-	padding: 0.5rem;
-	text-align: center;
-	color: var(--color-white);
-	font-family: "Poppins", sans-serif;
-	font-weight: bold;
-	width: 100%;
+  padding: 0.5rem;
+  text-align: center;
+  color: var(--color-white);
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  width: 100%;
 }
 
 .TeamCardContainer {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	grid-gap: 1rem;
-	gap: 1rem;
-	max-width: 1200px;
-	margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  grid-gap: 1rem;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }

@@ -47,12 +47,25 @@ addEventListener("load", () => {
     if (FirstName) {
       div.innerHTML = `
       <p class="UserName">Olá ${FirstName}</p>
+      <div class="logoutContainer">
+        <img src="./images/icons/Logout.svg" id="Logout" alt="sair"></img>
+        <p class="Tooltip">Sair</p>
+      </div>
       `;
+      div.classList.add("logout");
     }
     veifyToken();
+    addLogoutEvent();
   }
 })
 
+function addLogoutEvent() {
+  document.querySelector(".logoutContainer")
+    .addEventListener("click", () => {
+      User.logout();
+      window.location.href = "/";
+    })
+}
 
 async function veifyToken() {
   const isValid = await API.veifyToken();

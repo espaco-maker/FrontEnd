@@ -1,6 +1,7 @@
 import { API } from '../API/index.js';
 import { TogglePassword, formUtils } from '../utils/form.js';
 import { To } from '../utils/promise.js';
+import { ifLoggedIn } from '../utils/verifyLogin.js';
 
 const checkbox = document.querySelector('.checkboxContainer');
 const inputPasswordImage = document.querySelector('.eye-icon');
@@ -8,6 +9,10 @@ const inputPasswordImage = document.querySelector('.eye-icon');
 inputPasswordImage.addEventListener('click', () => {
   const inputPassword = document.querySelector('#password');
   TogglePassword.togglePassword(inputPassword, inputPasswordImage);
+});
+
+addEventListener('load', () => {
+  ifLoggedIn(() => window.location.href = '/');
 });
 
 checkbox.addEventListener('click', () => checkInput(checkbox));
@@ -61,3 +66,4 @@ async function handleSubmit(event) {
     window.location.href = '/';
   }, 2000);
 }
+

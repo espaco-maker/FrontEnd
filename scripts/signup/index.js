@@ -2,6 +2,7 @@ import { API } from '../API/index.js';
 import { TogglePassword, formUtils as formClass } from '../utils/form.js';
 import { goBack } from '../utils/goBack.js';
 import { To } from '../utils/promise.js';
+import { ifLoggedIn } from '../utils/verifyLogin.js';
 
 const inputPassword = document.querySelector('#password');
 const ImagePasswordIcon = document.querySelector('.eye-icon');
@@ -18,6 +19,9 @@ ImagePasswordIcon.addEventListener('click', () => {
 form.addEventListener('submit', event => {
   formUtils.handleSubmit(event);
 });
+
+
+ifLoggedIn(() => window.location.href = '/');
 
 const utils = {
   showErrors(errors) {
