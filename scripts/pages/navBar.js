@@ -1,6 +1,8 @@
 import { User } from "../utils/user.js";
 import { API } from "../API/index.js";
 
+document.querySelector(".NavBarButtonIcon").addEventListener("click", ToggleDropDown);
+
 function ToggleDropDown() {
   const width = window.innerWidth;
   if (width > 800) return;
@@ -94,5 +96,8 @@ window.addEventListener("scroll", () => {
 });
 
 goTop.addEventListener("click", () => {
-  scrollToPosition(0);
+  window.scroll({
+    top: 0,
+    behavior: "smooth",
+  });
 });

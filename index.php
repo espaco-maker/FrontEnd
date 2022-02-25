@@ -22,7 +22,7 @@
       <div class="NavBarWraper">
         <img src="./images/Logo.svg" alt="Logo" />
         <div class="NavBarButtonIconContainer">
-          <button class="NavBarButtonIcon" onclick="ToggleDropDown()">
+          <button class="NavBarButtonIcon">
             <img src="./images/icons/closeNav.svg" alt="X" class="closeNav" />
             <img src="./images/icons/openNav.svg" alt="O" class="openNav active" />
           </button>
