@@ -60,6 +60,11 @@ form .formInput.last {
   font-family: "Poppins", sans-serif;
 }
 
+form .formInput.radius {
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
 .formInput input,
 .formInput label {
   font-size: 1.2rem;

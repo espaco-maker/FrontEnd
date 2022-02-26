@@ -7,7 +7,6 @@ class SlogamForms extends HTMLElement {
     const shadow = this.shadowRoot;
     const background = this.getAttribute('backgroundpath');
     const logoPath = this.getAttribute('logopath')
-    console.log(background, logoPath);
 
     const section = this.createHTML(background, logoPath);
     const styleEl = document.createElement('style');
