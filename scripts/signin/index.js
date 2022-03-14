@@ -5,6 +5,7 @@ import { ifLoggedIn } from '../utils/verifyLogin.js';
 
 const checkbox = document.querySelector('.checkboxContainer');
 const inputPasswordImage = document.querySelector('.eye-icon');
+const loadingElement = document.querySelector('.Load');
 
 inputPasswordImage.addEventListener('click', () => {
   const inputPassword = document.querySelector('#password');
@@ -26,6 +27,9 @@ function checkInput(element) {
 const form = document.querySelector('#SigninForm');
 form.addEventListener('submit', handleSubmit);
 
+function toggleLoading() {
+  loadingElement.classList.toggle('active');
+}
 
 function showMessages(messages = [], success = true) {
   const divEl = document.querySelector('.error-message');
@@ -43,6 +47,7 @@ function showMessages(messages = [], success = true) {
 
 async function handleSubmit(event) {
   event.preventDefault();
+  toggleLoading();
   const Email = document.querySelector('#email').value;
   const Password = document.querySelector('#password').value;
   const remember = document.querySelector('#remember').checked;
@@ -58,9 +63,11 @@ async function handleSubmit(event) {
   };
   const [error] = await To(API.signin(data));
   if (error) {
+    toggleLoading();
     showMessages([error.message], false);
     return;
   }
+  toggleLoading();
   showMessages(["Login realizado com sucesso"], false);
   setTimeout(() => {
     window.location.href = '/';
