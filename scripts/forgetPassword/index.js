@@ -15,3 +15,10 @@ async function verifyEmailInput(email) {
   const response = await API.forgetPassword(email)
   console.log(response);
 }
+
+function goBack() {
+  window.history.back();
+}
+
+const goBackPage = document.querySelector('.goBack')
+goBackPage.addEventListener('click', goBack)
